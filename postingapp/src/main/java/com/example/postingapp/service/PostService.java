@@ -21,8 +21,8 @@ public class PostService {
 	}
 	
 	// 特定のユーザに紐づく投稿の一覧を作成日時が新しい順で取得
-	public List<Post> findPostsByUserOrderedByCreatedAtAsc(User user){
-		return postRepository.findByUserOrderByCreatedAtAsc(user);
+	public List<Post> findPostsByUserOrderedByUpdatedAtAsc(User user){
+		return postRepository.findByUserOrderByUpdatedAtAsc(user);
 	}
 	
 	// 指定したidを持つ投稿を取得する

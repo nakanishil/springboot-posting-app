@@ -36,7 +36,7 @@ public class PostController {
 	// 現在ログイン中のユーザ情報を取得すUserDetailsインターフェースを実装したオブジェクト(今回はUserDetailsImplクラスに@AuthenticationPrincipalをつける
 	public String index(@AuthenticationPrincipal UserDetailsImpl userDetailsImpl, Model model) {
 		User user = userDetailsImpl.getUser();
-		List<Post> posts = postService.findPostsByUserOrderedByCreatedAtAsc(user);
+		List<Post> posts = postService.findPostsByUserOrderedByUpdatedAtAsc(user);
 		
 		model.addAttribute("posts", posts);
 		
